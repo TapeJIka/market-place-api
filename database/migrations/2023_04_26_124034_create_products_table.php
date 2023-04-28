@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('mark');
             $table->string('model');
+            $table->date('date');
             $table->string('country');
             $table->string('city');
             $table->decimal('price');

@@ -13,9 +13,10 @@ class ProductCategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return ProductCategoryResource::collection(ProductCategory::all());
+        return ProductCategoryResource::collection(ProductCategory::filter($request->all())
+            ->get());
     }
 
     /**

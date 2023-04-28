@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ProductPhotoController;
 use App\Http\Controllers\Api\ProductTypeController;
 use App\Http\Controllers\Api\RatingController;
+use App\Http\Controllers\Api\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +27,10 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:api')->group(function () {
     Route::get('/user', [AuthController::class, 'user']);
     Route::get('/logout', [AuthController::class, 'logout']);
+
+    Route::put('/updateUserGeneralSettings', [UserController::class, 'updateUserGeneralSettings']);
+    Route::put('/updateUserPassword', [UserController::class, 'updateUserPassword']);
+    Route::delete('/deleteAccount', [UserController::class, 'handleUserAccountDelete']);
 });
 
 Route::apiResource('/complaint',ComplaintController::class);

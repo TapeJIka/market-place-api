@@ -26,6 +26,7 @@ class ProductRequest extends FormRequest
             'description' => 'required|string',
             'mark' => 'required|string',
             'model' => 'required|string',
+            'date' => 'required|date',
             'country' => 'required|string',
             'city' => 'required|string',
             'price' => 'required',

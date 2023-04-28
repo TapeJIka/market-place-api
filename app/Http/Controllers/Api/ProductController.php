@@ -13,9 +13,9 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return ProductResource::collection(Product::all());
+        return ProductResource::collection(Product::filter($request->all())->get());
     }
 
     /**
