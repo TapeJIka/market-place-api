@@ -14,6 +14,8 @@ class Product extends Model
         'description',
         'mark',
         'model',
+        'country',
+        'city',
         'price',
         'condition',
         'product_type_id',

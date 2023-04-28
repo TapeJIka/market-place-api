@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('description');
             $table->string('mark');
             $table->string('model');
+            $table->string('country');
+            $table->string('city');
             $table->decimal('price');
             $table->boolean('condition');
             $table->foreignId('product_type_id')->references('id')->on('product_types')->onDelete('cascade')->constrained();
